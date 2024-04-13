@@ -20,6 +20,7 @@ public class User {
         this.joinedSubreddits = new ArrayList<>();
         this.mySubreddits = new ArrayList<>();
         this.allMyPosts = new ArrayList<>();
+        this.timeline = new ArrayList<>();
         Reddit.addUser(this);
     }
 
@@ -185,13 +186,28 @@ public class User {
             System.out.println("          *********************************************            ");
         }
     }
+    public void showAllMyPosts(){
+        for (Post p : this.allMyPosts){
+            System.out.println("Title : " + p.getTitle());
+            System.out.println("Related Subreddit : " + p.getBelongsTo());
+            System.out.println("___________________________________________________ " );
+        }
+    }
     public void showTimeline(){
         for (Post p : this.timeline){
             p.showPost();
         }
     }
     public void showProfile(){
-
+        System.out.println("User Email : " + this.getEmail());
+        System.out.println("**********************************************************");
+        System.out.println("List of subreddits:");
+        System.out.println(" ");
+        showListOfJoinedSubreddits();
+        System.out.println(" ");
+        System.out.println("List of posts:");
+        System.out.println(" ");
+        showAllMyPosts();
     }
     public Subreddit findMySubreddit(String subredditName){
         for (Subreddit sub : this.mySubreddits){
@@ -229,5 +245,12 @@ public class User {
 
     public ArrayList<Post> getTimeline() {
         return timeline;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                '}';
     }
 }

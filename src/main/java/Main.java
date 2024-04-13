@@ -45,7 +45,6 @@ public class Main {
                         Reddit.userLogin(userEmail,userPassword).runUserMenu();
                     }
                     break;
-
                 default:
                     break;
             }

@@ -12,7 +12,7 @@ public class Post {
     }
     public void showPost(){
         System.out.println("Title : " + this.title + "              Creator : " + this.creator );
-        System.out.println("          *********************************************            ");
+        System.out.println("**************************************************************************");
         System.out.println(" ");
         System.out.println(this.text);
         System.out.println(" ");

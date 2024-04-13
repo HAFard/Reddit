@@ -45,7 +45,7 @@ public class Subreddit {
                     break;
 
                 case 2:
-
+                    showAllPosts();
                     break;
 
                 case 3:
@@ -110,7 +110,7 @@ public class Subreddit {
     public void showAllPosts(){
         for (Post p : this.listOfPosts){                                                                                 //show all posts
             System.out.println("Title : " + p.getTitle() + "              Creator : " + p.getCreator());
-            System.out.println("          *********************************************            ");
+            System.out.println("***************************************************************************");
         }
         Scanner in = new Scanner(System.in);                                                                             //get title of the post to show more detail
         System.out.println("please enter title of the post to show more detail or enter 'EX' to exit: ");
@@ -157,5 +157,11 @@ public class Subreddit {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Subreddit:" +
+                "Name ='" + name + "               " + " Number Of Members =" + userNumber ;
     }
 }
