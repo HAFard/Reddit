@@ -24,7 +24,7 @@ public class Main {
                     System.out.println("please Enter your password : ");
                     String enteredPassword =  in1.nextLine();
                     if (User.validateEmail(enteredEmail)){
-                        if (!Reddit.IsUser(enteredEmail)) {
+                        if (Reddit.findUser(enteredEmail) == null) {
                             new User(enteredEmail,enteredPassword);
                             System.out.println("Your account is created...Please log in!");
                         }
@@ -46,8 +46,7 @@ public class Main {
                     }
                     break;
 
-
-                case 3:
+                default:
                     break;
             }
             if (enteredNumber == 3) break;

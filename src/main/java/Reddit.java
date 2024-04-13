@@ -26,21 +26,21 @@ public class Reddit {
         allSubreddits.add(newSubreddit);
     }
 
-    public static boolean IsUser(String email){
+    public static User findUser(String email){
         for (User user : allUsers){
             if(user.getEmail().equals(email)){
-                return true;
+                return user;
             }
         }
-        return false;
+        return null;
     }
 
-    public static boolean IsSubreddit(String subredditName){
+    public static Subreddit findSubreddit(String subredditName){
         for (Subreddit sub : allSubreddits){
             if (sub.getName().equals(subredditName)){
-                return true;
+                return sub;
             }
         }
-        return false;
+        return null;
     }
 }
